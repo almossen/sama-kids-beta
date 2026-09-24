@@ -350,8 +350,8 @@ h1,h2{color:#2b2450}.bubble{background:#f1edfb;border-color:#e2d8f5}
           </div>
           <div class="symptomChoices" id="symptomChoices">
             <button type="button" onclick="chooseSymptom(this,'thirst')"><span class="choiceIcon">💧</span><span>عطش شديد</span></button>
-            <button type="button" onclick="chooseSymptom(this,'tired')"><span class="choiceIcon">😴</span><span>تعب</span></button>
-            <button type="button" onclick="chooseSymptom(this,'hungry')"><span class="choiceIcon">🍎</span><span>جوع</span></button>
+            <button type="button" onclick="chooseSymptom(this,'sneeze')"><span class="choiceIcon">🤧</span><span>زكام</span></button>
+            <button type="button" onclick="chooseSymptom(this,'happy')"><span class="choiceIcon">😄</span><span>فرح</span></button>
           </div>
           <div class="scenarioFeedback" id="symptomFeedback" aria-live="polite"></div>
           <button type="button" class="scenarioNext" id="symptomContinue" onclick="nextSymptomScenario()" hidden><span>الموقف التالي</span><span aria-hidden="true">←</span></button>
@@ -509,9 +509,9 @@ function update(){
 function next(){stopAudio();if(current===steps.length-1){location.reload();return}current++;update();playPageNarration()}
 function prev(){stopAudio();if(current>0){current--;update();playPageNarration()}}
 const symptomQuestions=[
- {icon:'🥤',prompt:'سما تطلب الماء مرة بعد مرة',choices:[['💧','عطش شديد','thirst'],['😴','تعب','tired'],['🍎','جوع','hungry']],answer:'thirst',feedback:'صحيح! كنت أشعر بعطش شديد.'},
- {icon:'🚻',prompt:'سما تذهب إلى الحمام أكثر من المعتاد',choices:[['🥶','برد','cold'],['🚻','دخول الحمام كثيرًا','bathroom'],['🤕','ألم في الرأس','headache']],answer:'bathroom',feedback:'صحيح! كنت أدخل الحمام مرات كثيرة.'},
- {icon:'⚽',prompt:'سما تلعب، ثم تريد أن ترتاح',choices:[['😊','سعادة','happy'],['🥤','عطش','thirst'],['😴','تعب','tired']],answer:'tired',feedback:'صحيح! كنت أشعر بالتعب.'}
+ {icon:'🥤',prompt:'سما تطلب الماء مرة بعد مرة',choices:[['💧','عطش شديد','thirst'],['🤧','زكام','sneeze'],['😄','فرح','happy']],answer:'thirst',feedback:'صحيح! كنت أشعر بعطش شديد.'},
+ {icon:'🚻',prompt:'سما تذهب إلى الحمام أكثر من المعتاد',choices:[['🥶','برد','cold'],['🚻','دخول الحمام كثيرًا','bathroom'],['🦷','ألم في السن','tooth']],answer:'bathroom',feedback:'صحيح! كنت أدخل الحمام مرات كثيرة.'},
+ {icon:'⚽',prompt:'سما تلعب، ثم تريد أن ترتاح',choices:[['😊','سعادة','happy'],['🤧','زكام','sneeze'],['😴','تعب','tired']],answer:'tired',feedback:'صحيح! كنت أشعر بالتعب.'}
 ];
 let symptomRound=0;
 const symptomSolved=[false,false,false];

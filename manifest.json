@@ -1,7 +1,7 @@
 {
   "index.html": {
-    "bytes": 8320310,
-    "sha256": "0d2ffd46ca8e9cd1081c38ecc64972713fcf36146d38928b3c666c50e3ec2086"
+    "bytes": 8319647,
+    "sha256": "0c7d9a4adbfce7167adf21876c17f8b55b9586c46bc491c49e1a1dd622e34eb9"
   },
   "adventure-02.html": {
     "bytes": 5052402,
@@ -16,8 +16,8 @@
     "sha256": "4b7a1eee725589db1e0db0259298adf48b3b75c70d6faea0db19fed4c72a1507"
   },
   "adventure-05.html": {
-    "bytes": 7801364,
-    "sha256": "868a4fa11302d1527832b82c9b51e46ec1aed70750dafa4e8dc56fa00928f00b"
+    "bytes": 7036308,
+    "sha256": "880b734848ea2e13cf3c9119f7befc79cf89502e718d3cfbce7be6f5f2bcca29"
   },
   "adventure-06.html": {
     "bytes": 4039425,
