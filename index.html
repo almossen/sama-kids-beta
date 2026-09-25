@@ -233,6 +233,7 @@ body:has(.stage:not([hidden])) .notice{display:none}
 </style>
 
 <style id="sama-v4-patch">
+body:has(#homeStage:not([hidden])) .app{height:auto;min-height:100dvh}
 .controls .nextHint{order:5;flex:0 0 100%;margin:2px 0 0;text-align:center;font-size:14px;font-weight:700;color:#493777;background:#f3edff;border-radius:12px;padding:4px 8px}
 .controls .nextHint[hidden]{display:none!important}
 #nextBtn.waitingForActivity{opacity:.72;filter:saturate(.75);cursor:pointer}
@@ -266,7 +267,7 @@ body:has(.stage:not([hidden])) .notice{display:none}
   <div class="adventureGrid">
     <h2 id="firstAdventureGroup" class="adventureGroupHeading">🏥 أيّامي الأولى</h2>
       <article class="adventureCard available review" aria-labelledby="firstAdventureTitle">
-      <span class="adventureNumber" aria-hidden="true">١</span>
+      <span class="adventureNumber" aria-hidden="true">👋</span>
       <div><span class="adventureStatus">قصة مصوّرة مسموعة 🔊</span><h2 id="firstAdventureTitle">مغامرتي الأولى</h2><p>نتعرف إلى قصة سما مع سُكَّري النوع الأول.</p></div>
       <button type="button" class="startAdventure" id="homeAdventureBtn" onclick="openFirstAdventureIntro()" aria-label="ابدأ المغامرة الأولى"><span aria-hidden="true">←</span><span>ابدأ المغامرة</span></button>
     </article>
