@@ -1,35 +1,35 @@
 {
   "index.html": {
-    "bytes": 3201672,
-    "sha256": "35fa656c8f5dbf72622bf8b58b78e7dd80afdab44084ee09a71ea281dd78594e"
+    "bytes": 3203166,
+    "sha256": "c8a774fbc9e76e5d67e642a025ee834431857454e5eedd7614de6df08e6c614a"
   },
   "adventure-02.html": {
-    "bytes": 2464831,
-    "sha256": "5192f8e611dc751b8a4b44101a839c73f14db9cadb4803ada3beb0915e01b133"
+    "bytes": 2467042,
+    "sha256": "9898754ae2ad3a58a9f906e95500575a4eb52eaa336c88d60e1080e19a3f625b"
   },
   "adventure-03.html": {
-    "bytes": 3644895,
-    "sha256": "6601d714d828abe8196f6429a77d29abdb5bf33a4e6225606991f1b70ea05e37"
+    "bytes": 3646967,
+    "sha256": "bd906fbe46bbca30c54cb778df0c5e7291b17cb5cfbc6d461cad96dfa0d5f5ab"
   },
   "adventure-04.html": {
-    "bytes": 4279533,
-    "sha256": "dcffbb47947b429899da3fb315492cb9431d6c960c552bd912718b0cef661d45"
+    "bytes": 4281588,
+    "sha256": "5267abca7cfd84a0dd6617919125663a691a6c743cb8b9a7bd856eabf90cb60e"
   },
   "adventure-05.html": {
-    "bytes": 3836570,
-    "sha256": "1308137f52f5b6a8cf1041f2bf4a9ce37482da9049fc5653d0036803909e9cff"
+    "bytes": 3838648,
+    "sha256": "c25cb3113b381f6dda0571b05b9e1dd16dfcc07574a2f77c05cdc33fd4a57729"
   },
   "adventure-06.html": {
-    "bytes": 1755291,
-    "sha256": "2593fe56c31826d572cd81cc7b8798bb0dd5e0f8d563e79089ff5a3c93245024"
+    "bytes": 1757346,
+    "sha256": "b4b12649c21778e568acb707a03302ee2d6ae4132f24128ff8230a5559360fc3"
   },
   "adventure-07.html": {
-    "bytes": 2196183,
-    "sha256": "9c897de19e4fdbe85b1f6a10f6bb8cf0b92edd0088afab35ce92aab022ea6041"
+    "bytes": 2198238,
+    "sha256": "77b037a5c93eeb87a94c7989b377ee70c8ab015ff95bfbb672cc714ef8bd673d"
   },
   "adventure-08.html": {
-    "bytes": 1739365,
-    "sha256": "49f65a2b95a99dd26ef62f1d0ed3758043644ac9b21822a017c428333b5928e7"
+    "bytes": 1741410,
+    "sha256": "e1a7f837545fb2ea77a56850e41aaca3c2f08f2cc1bf9bce58ea240e65710d87"
   },
   "energy-keys.html": {
     "bytes": 783887,

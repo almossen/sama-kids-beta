@@ -240,7 +240,16 @@ body:has(#homeStage:not([hidden])) .app{height:auto;min-height:100dvh}
 .adventureGroupHeading{grid-column:1/-1;margin:12px 4px 0;font-size:21px;color:#352658}
 @media(max-width:620px){.adventureGrid{gap:11px}.adventureCard{padding:13px!important;gap:9px!important}.adventureCard p{margin:3px 0 7px!important}.adventureGroupHeading{font-size:19px;margin-top:9px}}
 </style>
-</head>
+<style id="sama-lesson-navigation">
+.lessonControls{display:grid!important;grid-template-columns:auto minmax(60px,1fr) auto;align-items:center;gap:8px!important;direction:rtl}
+.lessonControls .lessonUtility,.lessonControls .lessonPaging{display:flex;align-items:center;gap:6px}
+.lessonControls .lessonProgress{display:flex;justify-content:center;min-width:0}
+.lessonControls .lessonPaging #nextBtn{min-width:142px}
+.lessonControls .nextHint{grid-column:1/-1;order:initial;flex:initial}
+@media(max-width:700px){.lessonControls{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto}.lessonControls .lessonUtility{grid-column:1}.lessonControls .lessonProgress{grid-column:2}.lessonControls .lessonPaging{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.lessonControls .lessonPaging .btn{width:100%;justify-content:center}.lessonControls .utilityText{display:none}.lessonControls .lessonUtility .homeBtn{min-width:42px;padding:0 6px}}
+@media(max-width:390px){.lessonControls .lessonProgress{display:none}.lessonControls .lessonUtility{grid-column:1/-1;justify-content:space-between}.lessonControls .lessonUtility .btn{font-size:12px!important}}
+@media(orientation:landscape) and (max-height:500px){.lessonControls{padding-block:3px!important}.lessonControls .btn{min-height:38px!important}.lessonControls .lessonPaging #nextBtn{min-width:118px}}
+</style></head>
 <body>
 <div class="app">
   <div class="notice">عالم سما للأطفال — مغامرات مصوّرة ومسموعة وألعاب تفاعلية.</div>
@@ -490,12 +499,12 @@ body:has(#homeStage:not([hidden])) .app{height:auto;min-height:100dvh}
     </section>
   </main>
 
-  <footer class="controls" hidden>
-    <button type="button" class="btn homeBtn" id="homeBtn" onclick="returnHome()" aria-label="العودة إلى الصفحة الرئيسية"><span aria-hidden="true">🏠</span><span>الرئيسية</span></button>
-    <button class="btn secondary navBtn" id="backBtn" onclick="prev()" aria-label="الصفحة السابقة"><span class="navArrow" aria-hidden="true">→</span><span>السابق</span></button>
-    <button type="button" class="btn replayBtn" id="replayBtn" onclick="replayAudio()" aria-label="إعادة سماع آخر مقطع"><span aria-hidden="true">↻</span><span>أعد الصوت</span></button><div class="dots" id="dots"></div><p id="nextHint" class="nextHint" role="status" aria-live="polite" hidden>أكمل النشاط لتنتقل إلى الصفحة التالية ✨</p>
-    <div style="display:flex;gap:8px"><button class="btn audio" id="audioBtn" onclick="speakCurrent()">🔊 اسمع سما</button><button class="btn primary navBtn" id="nextBtn" onclick="next()" aria-label="الصفحة التالية"><span class="navText">التالي</span><span class="navArrow" aria-hidden="true">←</span></button></div>
-  </footer>
+  <footer class="controls lessonControls" hidden aria-label="التنقل في المغامرة الأولى">
+  <div class="lessonUtility"><button type="button" class="btn homeBtn" id="homeBtn" onclick="returnHome()" aria-label="العودة إلى جميع المغامرات"><span aria-hidden="true">🏠</span><span class="utilityText">الرئيسية</span></button><button type="button" class="btn replayBtn" id="replayBtn" onclick="replayAudio()" aria-label="إعادة سماع آخر مقطع">↻ أعد الصوت</button><button class="btn audio" id="audioBtn" onclick="speakCurrent()">🔊 اسمع سما</button></div>
+  <div class="lessonProgress dots" id="dots"></div>
+  <div class="lessonPaging"><button class="btn secondary navBtn" id="backBtn" onclick="prev()" aria-label="الصفحة السابقة"><span class="navArrow" aria-hidden="true">→</span><span>السابق</span></button><button class="btn primary navBtn" id="nextBtn" onclick="next()" aria-label="الصفحة التالية"><span class="navText">التالي</span><span class="navArrow" aria-hidden="true">←</span></button></div>
+  <p id="nextHint" class="nextHint" role="status" aria-live="polite" hidden>أكمل النشاط لتنتقل إلى الصفحة التالية ✨</p>
+</footer>
 </div>
 <footer class="platformFooter" aria-label="معلومات عن منصة سما">
   <p><strong>عالم سما للأطفال</strong> جزء من منصة «سما: رحلة التعايش مع السكري من النوع الأول».</p>
@@ -539,12 +548,12 @@ function update(){
   document.getElementById('pageCount').textContent='الصفحة '+(current+1)+' من '+steps.length;
   document.querySelector('.progress').setAttribute('aria-valuenow',current+1);
  document.getElementById('backBtn').disabled=current===0;
- const n=document.getElementById('nextBtn');const last=current===steps.length-1;n.querySelector('.navText').textContent=last?'الرئيسية':'التالي';n.querySelector('.navArrow').textContent=last?'⌂':'←';n.setAttribute('aria-label',last?'العودة إلى الصفحة الرئيسية':'الصفحة التالية');document.getElementById('homeBtn').hidden=last;
+ const n=document.getElementById('nextBtn');const last=current===steps.length-1;n.querySelector('.navText').textContent=last?'المغامرة التالية':'التالي';n.querySelector('.navArrow').textContent='←';n.setAttribute('aria-label',last?'الانتقال إلى المغامرة الثانية':'الصفحة التالية');document.getElementById('homeBtn').hidden=false;
  const activityPending=(current===1&&!symptomDone)||(current===5&&!energyDone)||(current===6&&!activitiesDone);n.disabled=false;n.setAttribute('aria-disabled',String(activityPending));n.classList.toggle('waitingForActivity',activityPending);n.setAttribute('aria-describedby',activityPending?'nextHint':'');document.getElementById('nextHint').hidden=!activityPending;
  updateAudioButton();
  window.scrollTo({top:0,behavior:'smooth'});
 }
-function next(){if(document.getElementById('nextBtn').getAttribute('aria-disabled')==='true'){if(current===1)playAudio('samaP2Retry');return;}stopAudio();if(current===steps.length-1){location.reload();return}current++;update();playPageNarration()}
+function next(){if(document.getElementById('nextBtn').getAttribute('aria-disabled')==='true'){if(current===1)playAudio('samaP2Retry');return;}stopAudio();if(current===steps.length-1){location.href='adventure-02.html';return}current++;update();playPageNarration()}
 function prev(){stopAudio();if(current>0){current--;update();playPageNarration()}}
 const symptomQuestions=[
  {icon:'🥤',prompt:'سما تطلب الماء مرة بعد مرة',choices:[['💧','عطش شديد','thirst'],['🤧','زكام','sneeze'],['😄','فرح','happy']],answer:'thirst',feedback:'صحيح! كنت أشعر بعطش شديد.'},
