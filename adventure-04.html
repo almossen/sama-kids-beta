@@ -92,6 +92,7 @@ body:has(#stage:not([hidden])) .notice{display:none}
 #controls:has(#audioModeBtn[aria-pressed="false"]) #replayBtn{display:none!important}
 </style>
 <style id="sama-story-navigation">
+#controls.storyControls[hidden]{display:none!important}
 #controls.storyControls{display:grid!important;grid-template-columns:auto minmax(55px,1fr) auto;align-items:center;gap:8px!important;direction:rtl}
 #controls.storyControls .storyUtility,#controls.storyControls .storyPaging{display:flex;align-items:center;gap:6px}
 #controls.storyControls .storyProgress{display:flex;justify-content:center;min-width:0}
